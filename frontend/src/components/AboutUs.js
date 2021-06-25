@@ -20,11 +20,12 @@ const RenderMember = ({member, deleteMember, user}) => { //arrow function, hàm 
             <div style = {{width:'65%'}}>          
                 <h3>{member.firstname}  {member.lastname}</h3>
                 <p>{member.description}</p>
-                
+                <p>Email: {member.email}</p>
+                <p>Tel.: {member.tel}</p>
                 {user.user && user.user.isAdmin?
                     <>
-                    <p>Email: {member.email}</p>
-                    <p>Tel.: {member.tel}</p>
+                    {/* <p>Email: {member.email}</p>
+                    <p>Tel.: {member.tel}</p> */}
                     <Button outline color="danger" size="sm" onClick={() => deleteMember(member)}> 
                         DELETE MEMBER
                     </Button>
