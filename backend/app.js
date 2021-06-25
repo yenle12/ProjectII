@@ -17,6 +17,7 @@ const commentsRouter = require('./routes/comments');
 const membersRouter = require('./routes/members');
 const feedbacksRouter = require('./routes/feedbacks');
 
+// ket noi vơi mongodb 
 const mongoose = require('mongoose');
 const url = config.mongoUrl;
 const connect = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, });
