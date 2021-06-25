@@ -119,5 +119,7 @@ router.route('/:commentId')
 		next(err);
 	}
 });
+// .duplicateCheck() {
+// }
 
 module.exports = router

@@ -1,4 +1,4 @@
 module.exports = {
 	'secretKey': '12345-67890-54321-098765',
-	'mongoUrl' : 'mongodb+srv://hanh-nh_18:123321@cluster0.vyhic.mongodb.net/hanh-nh_18'
+	'mongoUrl' : 'mongodb+srv://yen-lt_12:12112000@cluster0.zuftm.mongodb.net/db_project2?retryWrites=true&w=majority'
 }
