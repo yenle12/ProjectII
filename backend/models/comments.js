@@ -13,15 +13,18 @@ const commentSchema = new Schema({
 		default: ''
 	},
 	author:{
+		   
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'User'
+		ref: 'User',
+		unique: true,
+		sparse: true 
 	},
 	drink:{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Drink'
 	}
 },{
-	tiemstamps:{}
+	tiemstamps:{} 
 });
 
 var Comments = mongoose.model('Comment', commentSchema);

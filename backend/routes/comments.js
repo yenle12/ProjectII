@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express'); 
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('./cors');
@@ -26,13 +26,13 @@ router.route('/')
 .post(cors.corsWithOptions, authenticate.checkUser, async (req, res, next) =>{
 	if (req.body != null) {
 		try {
-			req.body.author  = req.user._id;
-			cmt = await Comments.create(req.body);
-			cmt = await Comments.findById(cmt._id).populate('author');
-			res.statusCode = 200;
-			res.setHeader('Content-Type', 'application/json');
-			res.json(cmt);  
-			console.log('Successfully created the new comment: '+cmt);  
+				req.body.author  = req.user._id;
+				cmt = await Comments.create(req.body);
+				cmt = await Comments.findById(cmt._id).populate('author');
+				res.statusCode = 200;
+				res.setHeader('Content-Type', 'application/json');
+				res.json(cmt);  
+				console.log('Successfully created the new comment: '+cmt);  
 		}
 		catch(err){
 			next(err);
@@ -119,7 +119,6 @@ router.route('/:commentId')
 		next(err);
 	}
 });
-// .duplicateCheck() {
-// }
+
 
 module.exports = router

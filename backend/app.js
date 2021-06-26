@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const config = require('./config');
 const passport = require('passport');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');  //module hỗ trợ lấy dữ liệu từ from
 const cors = require('cors'); // addition we make
 const fileUpload = require('express-fileupload'); //addition we make
 
@@ -17,7 +17,7 @@ const commentsRouter = require('./routes/comments');
 const membersRouter = require('./routes/members');
 const feedbacksRouter = require('./routes/feedbacks');
 
-// ket noi vơi mongodb 
+
 const mongoose = require('mongoose');
 const url = config.mongoUrl;
 const connect = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, });
@@ -39,9 +39,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(passport.initialize());
+app.use(passport.initialize()); // thông báo sử dụng passport
 app.use(bodyParser.urlencoded({ extended: true }));
-// Use CORS and File Upload modules here
+// Sử dụng module Cors và File upload  
 app.use(cors());
 app.use(fileUpload());
 
